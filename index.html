@@ -32,6 +32,8 @@
 
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
+    <!--9_1.b-->
+  <link href="assets/css/custom.css" rel="stylesheet">
 
   <!-- =======================================================
   * Template Name: MinimalFolio
@@ -47,11 +49,11 @@
   <header id="header" class="header d-flex align-items-center position-relative">
     <div class="container-fluid position-relative d-flex align-items-center justify-content-between">
 
-      <a href="index.html" class="logo d-flex align-items-center">
-        <h1 class="sitename">MinimalFolio</h1>
+      <a href="index.html" class="logo-link">
+        <h1 class="logo-link">MinimalFolio</h1>
       </a>
 
-      <nav id="navmenu" class="navmenu">
+      <nav id="navmenu a" class="navmenu a">
         <ul>
           <li><a href="#about" class="active">About</a></li>
           <li><a href="#resume">Resume</a></li>
@@ -97,25 +99,25 @@
         <!-- Intro + Photo -->
         <div class="row align-items-center justify-content-between intro-wrap gy-5">
           <div class="col-lg-7" data-aos="fade-right" data-aos-delay="150">
-            <div class="intro-content">
+            <div>
                 <!--4.a.i-->
               <span class="eyebrow">Hello there</span>
-              <h2 class="headline">Sveiki, esu Dovydas — kūrybiškas inžinierius, kuris elektros srovei ir kodų eilutėms suteikia harmoningą prasmę.</h2>
-              <p class="lead">
+              <h2>Sveiki, esu Dovydas — kūrybiškas inžinierius, kuris elektros srovei ir kodų eilutėms suteikia harmoningą prasmę.</h2>
+              <h4>
                 Aš esu technologijų entuziastas, kurio širdis plaka elektronikos ritmu, o protas veržiasi išspręsti sudėtingiausias technines problemas. Mano pasaulis — tai tikslių grandynų simfonija, kodo logikos grožis ir mechaninių sistemų tobulumas.
-              </p>
-              <p class="lead">
+              </h4>
+              <h5>
                 Mano kūrybiškumas išsiskiria kruopštumu ir atkaklumu. Nesu linkęs palikti nei vieno laidų gnybto neužsandeļinto, nei vienos kodo eilutės nepatikrintos. Tobulumo siekimas yra ne tik mano darbo principas, bet ir gyvenimo filosofija.
-              </p>
-              <p class="lead">
+              </h5>
+              <h6>
                 Kiekvienas mano projektuojamas įrenginys ar programuojama sistema — tai apgalvotas ir iki smulkmenų atliktas darbas, kuriuo galiu didžiuotis. Mano tikslas — sukurti technologijas, kurios veikia ne tik sklandžiai, bet ir elegantiškai.
-              </p>
+              </h6>
 
               <div class="cta-group">
-                <a href="#portfolio" class="btn-ghost">
+                <a class="btn">
                   Mano darbai <i class="bi bi-arrow-down"></i>
                 </a>
-                <a href="#resume" class="btn-ghost">
+                <a class="btn">
                   Plačiau apie mane <i class="bi bi-arrow-down"></i>
                 </a>
               </div>
@@ -193,13 +195,13 @@
           <div class="col-lg-12">
             <ul class="nav nav-pills resume-navigation justify-content-center" id="resume-resume-tabs" role="tablist" data-aos="fade-up" data-aos-delay="200">
               <li class="nav-item" role="presentation">
-                <button class="nav-link active" id="resume-education-tab" data-bs-toggle="pill" data-bs-target="#resume-education" type="button" role="tab" aria-controls="resume-education" aria-selected="false">
+                <button class="btn-primary" id="resume-education-tab" data-bs-toggle="pill" data-bs-target="#resume-education" type="button" role="tab" aria-controls="resume-education" aria-selected="false">
                   <span class="nav-number">01</span>
                   <span class="nav-label">Išsilavinimas</span>
                 </button>
               </li>
               <li class="nav-item" role="presentation">
-                <button class="nav-link" id="resume-experience-tab" data-bs-toggle="pill" data-bs-target="#resume-experience" type="button" role="tab" aria-controls="resume-experience" aria-selected="true">
+                <button class="btn-secondary" id="resume-experience-tab" data-bs-toggle="pill" data-bs-target="#resume-experience" type="button" role="tab" aria-controls="resume-experience" aria-selected="true">
                   <span class="nav-number">02</span>
                   <span class="nav-label">Darbo patirtis</span>
                 </button>
@@ -217,7 +219,7 @@
             <div class="education-list">
               <div class="education-entry" data-aos="fade-up" data-aos-delay="400">
                 <div class="degree-year">2024</div>
-                <div class="degree-details">
+                <div>
                   <h3>Įgytas vidurinis išsilavinimas</h3>
                   <div class="institution">Vilniaus Karoliniškių gimnazija</div>
                 </div>
@@ -225,7 +227,7 @@
 
               <div class="education-entry" data-aos="fade-up" data-aos-delay="450">
                 <div class="degree-year">2028</div>
-                <div class="degree-details">
+                <div>
                   <h3>Inžinerijos bakalauro laipsnis</h3>
                   <div class="institution">VilniusTECH universitetas</div>
                   <p>gal bus</p>
@@ -234,7 +236,7 @@
 
               <div class="education-entry" data-aos="fade-up" data-aos-delay="500">
                 <div class="degree-year">2030</div>
-                <div class="degree-details">
+                <div>
                   <h3>Magistras</h3>
                   <div class="institution">VilniusTECH universitetas</div>
                   <p>be šansu</p>
@@ -292,7 +294,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="content">
+                <div>
                   <h3>Pirmas grafikas</h3>
                   <p>f(x,y) = 1 - 2*x^2 - 3*y^2</p>
                 </div>
@@ -311,7 +313,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="content">
+                <div>
                   <h3>Antras grafikas</h3>
                   <p>z(x,y) = 1 - (x^2 + y^2)</p>
                 </div>
@@ -330,7 +332,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="content">
+                <div>
                   <h3>Trečias grafikas</h3>
                   <p>Neįsivaizduoju į ką žiūriu</p>
                 </div>
@@ -415,7 +417,7 @@
         <div class="row align-items-stretch">
           <div class="col-lg-7 order-lg-1 order-2" data-aos="fade-right" data-aos-delay="200">
             <div class="contact-form-container">
-              <div class="form-intro">
+              <div>
                 <h2>Let's Start a Conversation</h2>
                 <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint occaecat cupidatat.</p>
               </div>
@@ -474,7 +476,7 @@
 
           <div class="col-lg-5 order-lg-2 order-1" data-aos="fade-left" data-aos-delay="300">
             <div class="contact-sidebar">
-              <div class="contact-header">
+              <div>
                 <h3>Get in Touch</h3>
                 <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud.</p>
               </div>
@@ -484,7 +486,7 @@
                   <div class="contact-icon">
                     <i class="bi bi-geo-alt"></i>
                   </div>
-                  <div class="contact-details">
+                  <div>
                     <span class="method-label">Address</span>
                     <p>892 Park Avenue, Manhattan<br>New York, NY 10075</p>
                   </div>
@@ -494,7 +496,7 @@
                   <div class="contact-icon">
                     <i class="bi bi-envelope"></i>
                   </div>
-                  <div class="contact-details">
+                  <div>
                     <span class="method-label">Email</span>
                     <p>hello@businessdemo.com</p>
                   </div>
@@ -504,7 +506,7 @@
                   <div class="contact-icon">
                     <i class="bi bi-telephone"></i>
                   </div>
-                  <div class="contact-details">
+                  <div>
                     <span class="method-label">Phone</span>
                     <p>+1 (555) 789-2468</p>
                   </div>
@@ -514,7 +516,7 @@
                   <div class="contact-icon">
                     <i class="bi bi-clock"></i>
                   </div>
-                  <div class="contact-details">
+                  <div>
                     <span class="method-label">Hours</span>
                     <p>Monday - Friday: 9AM - 6PM<br>Saturday: 10AM - 4PM</p>
                   </div>
@@ -570,7 +572,7 @@
   </footer>
 
   <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center alert"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Preloader -->
   <div id="preloader">
