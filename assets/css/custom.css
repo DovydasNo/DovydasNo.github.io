@@ -26,7 +26,7 @@ h2 {
 
 h3 {
     font-size: 1.75rem;
-    color: #ceee3b;
+    color: #889e27;
     font-weight: 600;
     line-height: 1.4;
     letter-spacing: -0.2px;
@@ -44,7 +44,7 @@ h4 {
 
 h5 {
     font-size: 1.25rem;
-    color: #bbb0b3;
+    color: #ad808c;
     font-weight: 500;
     line-height: 1.6;
     letter-spacing: 0px;
@@ -53,7 +53,7 @@ h5 {
 
 h6 {
     font-size: 1rem;
-    color: #f1b4d1;
+    color: #992b5f;
     font-weight: 400;
     line-height: 0.9;
     letter-spacing: 0.5px;
@@ -386,4 +386,89 @@ a:focus {
 .services-table tr:hover {
   background: #f5e0fc;
   transition: 0.2s ease;
+}
+
+/* 10_1 */
+.fade-in-section {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1.2s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.icon-wiggle {
+    display: inline-block;
+    animation: wiggle 1.5s ease-in-out infinite;
+}
+
+@keyframes wiggle {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(10deg); }
+    50% { transform: rotate(0deg); }
+    75% { transform: rotate(-10deg); }
+    100% { transform: rotate(0deg); }
+}
+
+/* 10_2 */
+#preloader {
+    position: fixed;
+    inset: 0;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.spinner {
+    animation: spin 3s linear infinite;
+}
+
+.hide {
+    animation: fadeOut 2s ease forwards;
+}
+
+.loader-dots {
+    width: 60px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.loader-dots div {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: black;
+    animation: dots 0.6s infinite alternate;
+}
+
+.loader-dots div:nth-child(2) {
+    animation-delay: 0.2s;
+}
+.loader-dots div:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes dots {
+    from { transform: translateY(0); opacity: 0.5; }
+    to   { transform: translateY(-10px); opacity: 1; }
+}
+
+body.loaded #preloader {
+    display: none;
+}
+
+/* 10_3 */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0s !important;
+        animation-iteration-count: 1 !important;
+        transition: none !important;
+    }
 }
