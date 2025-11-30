@@ -45,7 +45,13 @@
 </head>
 
 <body class="index-page">
-
+  <div id="preloader">
+    <div class="loader-dots">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+  </div>
   <header id="header" class="header d-flex align-items-center position-relative">
     <div class="container-fluid position-relative d-flex align-items-center justify-content-between">
 
@@ -53,7 +59,7 @@
         <h1 class="logo-link">MinimalFolio</h1>
       </a>
 
-      <nav id="navmenu a" class="navmenu a">
+      <nav id="navmenu_a" class="navmenu a">
         <ul>
           <li><a href="#about" class="active">Trumpai</a></li>
           <li><a href="#resume">Apie mane</a></li>
@@ -87,7 +93,7 @@
   <main class="main">
 
     <!-- About Section -->
-    <section id="about" class="about section light-background">
+    <section id="about" class="about section light-background fade-in-section">
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
@@ -268,7 +274,7 @@
     </section><!-- /Resume Section -->
 
     <!-- Portfolio Section -->
-    <section id="portfolio" class="portfolio section">
+    <section id="portfolio" class="portfolio section fade-in-section">
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
@@ -404,41 +410,44 @@
               </audio>
             </div>
           </div>
+        </div>
 
-    <!--9_pap.2-->
-  <table class="services-table">
+          <!--9_pap.2-->
+        <table class="services-table">
 
-    <tr class="header-row">
-      <th>Pavadinimas</th>
-      <th>Aprašymas</th>
-      <th>Kaina</th>
-    </tr>
+          <tr class="header-row">
+            <th>Pavadinimas</th>
+            <th>Aprašymas</th>
+            <th>Kaina</th>
+          </tr>
 
-    <tr>
-      <td>Samdomas svečias</td>
-      <td>Gale stoviu su juodu kostiumu, nekalbu</td>
-      <td>100 €</td>
-    </tr>
+          <tr>
+            <td>Samdomas svečias</td>
+            <td>Gale stoviu su juodu kostiumu, nekalbu</td>
+            <td>100 €</td>
+          </tr>
 
-    <tr>
-      <td>Gėdintis svečias</td>
-      <td>Laidotuvių priekyje emociškai verkiu</td>
-      <td>200 €</td>
-    </tr>
+          <tr>
+            <td>Gėdintis svečias</td>
+            <td>Laidotuvių priekyje emociškai verkiu</td>
+            <td>200 €</td>
+          </tr>
 
-    <tr>
-      <td>'Netiesus' svečias</td>
-      <td>Prisistatau su suknele, kad šeimai kiltų klausimų dėl artimojo orentacijos</td>
-      <td>250 €</td>
-    </tr>
+          <tr>
+            <td>'Netiesus' svečias</td>
+            <td>Prisistatau su suknele, kad šeimai kiltų klausimų dėl artimojo orentacijos</td>
+            <td>250 €</td>
+          </tr>
 
-    <tr>
-      <td>Ekstremalus svečias</td>
-      <td>Grasinu įšokti į duobę su karstu (+100 € rmt įšoku)</td>
-      <td>500 €</td>
-    </tr>
+          <tr>
+            <td>Ekstremalus svečias</td>
+            <td>Grasinu įšokti į duobę su karstu (+100 € rmt įšoku)</td>
+            <td>500 €</td>
+          </tr>
 
-  </table>
+        </table>
+      </div>
+    </section>
 
     <!-- Contact Section -->
     <section id="contact" class="contact section light-background">
@@ -562,16 +571,16 @@
                 <span class="connect-label">Connect with us</span>
                 <div class="social-links">
                   <a href="#" class="social-link">
-                    <i class="bi bi-linkedin"></i>
+                    <i class="bi bi-linkedin icon-wiggle"></i>
                   </a>
                   <a href="#" class="social-link">
-                    <i class="bi bi-twitter-x"></i>
+                    <i class="bi bi-twitter-x icon-wiggle"></i>
                   </a>
                   <a href="#" class="social-link">
-                    <i class="bi bi-instagram"></i>
+                    <i class="bi bi-instagram icon-wiggle"></i>
                   </a>
                   <a href="#" class="social-link">
-                    <i class="bi bi-facebook"></i>
+                    <i class="bi bi-facebook icon-wiggle"></i>
                   </a>
                 </div>
               </div>
@@ -590,10 +599,10 @@
         <p>© <span>Copyright</span> <strong class="px-1 sitename">MinimalFolio</strong> <span>All Rights Reserved</span></p>
       </div>
       <div class="social-links d-flex justify-content-center">
-        <a href=""><i class="bi bi-twitter-x"></i></a>
-        <a href=""><i class="bi bi-facebook"></i></a>
-        <a href=""><i class="bi bi-instagram"></i></a>
-        <a href=""><i class="bi bi-linkedin"></i></a>
+        <a href=""><i class="bi bi-twitter-x icon-wiggle"></i></a>
+        <a href=""><i class="bi bi-facebook icon-wiggle"></i></a>
+        <a href=""><i class="bi bi-instagram icon-wiggle"></i></a>
+        <a href=""><i class="bi bi-linkedin icon-wiggle"></i></a>
       </div>
       <div class="credits">
         <!-- All the links in the footer should remain intact. -->
@@ -609,14 +618,6 @@
   <!-- Scroll Top -->
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center alert"><i class="bi bi-arrow-up-short"></i></a>
 
-  <!-- Preloader -->
-  <div id="preloader">
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-  </div>
-
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
@@ -630,7 +631,11 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
-
+  <script>
+    window.addEventListener("load", () => {
+        document.body.classList.add("loaded");
+    });
+  </script>
 </body>
 
 </html>
