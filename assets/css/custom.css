@@ -1,5 +1,3 @@
-/* ===== 2. TYPOGRAPHY ===== */
-
 /* 9_2.a */
 body {
     font-family: 'Segoe UI', Tahoma, 'Geneva', Verdana, sans-serif;
@@ -159,9 +157,6 @@ a:focus {
     transform: scale(0.95);
 }
 
-/* 4a. Vienodi tarpai sekcijose */
-/* ===== 4. ELEMENTŲ IŠDĖSTYMAS ===== */
-
 /* 9_4.a */
 .about, .resume, .portfolio, .services, .contact {
     margin: 3rem 0;
@@ -172,7 +167,7 @@ a:focus {
     padding: 0 2rem;
 }
 
-/* 9_4.b*/
+/* 9_4.b */
 .profile-photo {
     border-radius: 20px !important;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2) !important;
@@ -185,7 +180,6 @@ a:focus {
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3) !important;
 }
 
-/* Turinio blokų patobulinimai */
 .content-block {
     background: white;
     border-radius: 15px;
@@ -195,14 +189,12 @@ a:focus {
     border: 1px solid #e9ecef;
 }
 
-/* Sekcijų tarpai */
 .section {
     margin: 2rem 0;
     padding: 2rem 0;
 }
 
-
-/* 9_5.a */
+/* 9_5 */
 .navmenu a {
     color: #2c3e50 !important;
     font-weight: 500;
@@ -226,13 +218,12 @@ a:focus {
     box-shadow: 0 4px 10px rgba(231, 76, 60, 0.3);
 }
 
-/* 9_5.b */
 .alert {
-    padding: 1rem 1.5rem;
+    padding: 2rem 2rem;
     border-radius: 8px;
     border: none;
     font-weight: 500;
-    color: #155724;
+    background-color: #1ca03b !important;
     margin-bottom: 1rem;
 }
 
@@ -260,9 +251,7 @@ a:focus {
     border-left: 4px solid #17a2b8;
 }
 
-/* ===== 6. SPALVŲ KONTRAS TAS ===== */
-
-/* Užtikrinamas tinkamas kontrastas */
+/* 9_6 */
 .text-contrast {
     color: #2c3e50;
 }
@@ -276,7 +265,6 @@ a:focus {
     color: #ffffff;
 }
 
-/* Responsive tarpai */
 @media (max-width: 768px) {
     .section {
         margin: 1rem 0;
@@ -297,7 +285,6 @@ a:focus {
     }
 }
 
-/* Papildomi stiliai formų elementams */
 .form-control {
     border-radius: 6px;
     border: 1px solid #ced4da;
@@ -308,4 +295,95 @@ a:focus {
 .form-control:focus {
     border-color: #3498db;
     box-shadow: 0 0 0 0.2rem rgba(52, 152, 219, 0.25);
+}
+
+/* 9_pap.1 */
+.custom-counter {
+  counter-reset: item; 
+  padding-left: 0;
+}
+
+.custom-counter > li {
+  list-style: none;
+  counter-increment: item;
+  position: relative;
+  padding-left: 45px;
+  margin: 12px 0;
+}
+
+.custom-counter li::before {
+  content: counter(item) ".";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+
+  width: 28px;
+  height: 28px;
+  line-height: 28px;
+
+  font-weight: bold;
+  color: #0a74ff;
+  text-align: center;
+  background: #fff;
+}
+
+.custom-counter li ul {
+  counter-reset: none !important;
+  counter-increment: none !important;
+}
+
+.nested-list {
+  list-style: square;
+  margin-top: 5px;
+  margin-left: 20px;
+  color: #444;
+}
+
+.custom-bullets {
+  list-style: none;
+  padding-left: 0;
+}
+
+.custom-bullets li {
+  position: relative;
+  padding-left: 25px;
+  margin: 6px 0;
+}
+
+.custom-bullets li::before {
+  content: ">";
+  position: absolute;
+  left: 0;
+  color: #00b894;
+  font-weight: bold;
+}
+
+/* 9_pap.2 */
+.services-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+  font-size: 16px;
+}
+
+.services-table th,
+.services-table td {
+  padding: 12px;
+}
+
+.services-table .header-row {
+  background: #f72b57;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.services-table tr:nth-child(even) {
+  background: #f0f4ff;
+}
+
+.services-table tr:hover {
+  background: #f5e0fc;
+  transition: 0.2s ease;
 }
