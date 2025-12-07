@@ -539,3 +539,76 @@ body.loaded #preloader {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+/* 11_3 */
+.rating-section {
+    margin: 30px 0;
+    padding: 20px;
+    background-color: rgba(0,0,0,0.02);
+    border-radius: 8px;
+    border-left: 4px solid #007bff;
+}
+
+.rating-title {
+    margin-bottom: 20px;
+    color: #333;
+    font-weight: 600;
+}
+
+.rating-question {
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.rating-question:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.question-text {
+    font-weight: 500;
+    margin-bottom: 10px;
+    color: #444;
+}
+
+.radio-group {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-bottom: 10px;
+}
+
+.radio-label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+}
+
+.radio-label input[type="radio"] {
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+.radio-label span {
+    font-size: 0.85em;
+    color: #666;
+}
+
+.radio-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9em;
+    color: #666;
+}
+
+.rating-output-box {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 6px;
+    background: #f7f7f7;
+    border: 1px solid #ddd;
+}
