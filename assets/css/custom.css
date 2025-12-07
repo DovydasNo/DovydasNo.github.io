@@ -612,3 +612,14 @@ body.loaded #preloader {
     background: #f7f7f7;
     border: 1px solid #ddd;
 }
+
+/* 11_pap.1.a */
+.input-error {
+    border: 2px solid #dc3545 !important;
+}
+
+.error-text {
+    color: #dc3545;
+    font-size: 0.85em;
+    margin-top: 4px;
+}
