@@ -326,6 +326,10 @@ document.addEventListener("input", updateSubmitState);
   const matchesEl = document.getElementById('matchesCount');
   const winEl = document.getElementById('winMessage');
   const diffInputs = document.querySelectorAll('input[name="difficulty"]');
+  /* 12_pap */
+  const timeEl = document.getElementById('timeElapsed');
+  const bestEasyEl = document.getElementById('bestEasy');
+  const bestHardEl = document.getElementById('bestHard');
 
   let difficulty = 'easy';
   let cols = 4, rows = 3, totalCards = 12;
@@ -335,6 +339,42 @@ document.addEventListener("input", updateSubmitState);
   let lockBoard = false;
   let moves = 0;
   let matches = 0;
+  /* 12_pap */
+  let timer = null;
+  let secondsElapsed = 0;
+
+  /* 12_pap.1.a */
+  function loadBestScores() {
+    const bestEasy = localStorage.getItem('memory_best_easy');
+    const bestHard = localStorage.getItem('memory_best_hard');
+    bestEasyEl.textContent = bestEasy ? bestEasy : '-';
+    bestHardEl.textContent = bestHard ? bestHard : '-';
+  }
+
+  /* 12_pap.2 */
+  function startTimer() {
+    clearInterval(timer);
+    secondsElapsed = 0;
+    timeEl.textContent = 0;
+    timer = setInterval(() => {
+      secondsElapsed++;
+      timeEl.textContent = secondsElapsed;
+    }, 1000);
+  }
+
+  function stopTimer() {
+    clearInterval(timer);
+  }
+
+  /* 12_pap.1 */
+  function updateBestScore() {
+    const key = difficulty === 'easy' ? 'memory_best_easy' : 'memory_best_hard';
+    const currentBest = localStorage.getItem(key);
+    if (!currentBest || moves < parseInt(currentBest)) {
+      localStorage.setItem(key, moves);
+    }
+    loadBestScores();
+  }
 
   /* 12_3.a */
   function setGridByDifficulty() {
@@ -462,6 +502,8 @@ document.addEventListener("input", updateSubmitState);
     const totalPairs = totalCards / 2;
     if (matches === totalPairs) {
       winEl.style.display = 'block';
+      stopTimer();
+      updateBestScore();
     }
   }
 
@@ -473,6 +515,8 @@ document.addEventListener("input", updateSubmitState);
     moves = 0; matches = 0; lockBoard = false;
     resetOpenSelection();
     updateStats();
+    /* 12_pap.2 */
+    startTimer();
     winEl.style.display = 'none';
   }
 
@@ -488,6 +532,9 @@ document.addEventListener("input", updateSubmitState);
     moves = 0; matches = 0; lockBoard = false; resetOpenSelection();
     /* 12_3.b.iii */
     updateStats();
+    /* 12_pap.2 */
+    stopTimer();
+    startTimer();
     winEl.style.display = 'none';
   }
 
@@ -503,3 +550,5 @@ document.addEventListener("input", updateSubmitState);
     winEl.style.display = 'none';
   }));
 })();
+
+loadBestScores();
