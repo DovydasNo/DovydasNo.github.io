@@ -309,3 +309,197 @@ function updateSubmitState() {
 }
 
 document.addEventListener("input", updateSubmitState);
+
+/* 12_1 */
+(function(){
+  /* 12_2.a */
+  const ICONS = [
+    'bi-star-fill','bi-heart-fill','bi-music-note-beamed','bi-lightning-fill',
+    'bi-bug-fill','bi-emoji-smile-fill','bi-moon-fill','bi-sun-fill',
+    'bi-shield-lock-fill','bi-book-fill','bi-flag-fill','bi-check2-circle'
+  ];
+
+  const boardEl = document.getElementById('gameBoard');
+  const startBtn = document.getElementById('startGameBtn');
+  const resetBtn = document.getElementById('resetGameBtn');
+  const movesEl = document.getElementById('movesCount');
+  const matchesEl = document.getElementById('matchesCount');
+  const winEl = document.getElementById('winMessage');
+  const diffInputs = document.querySelectorAll('input[name="difficulty"]');
+
+  let difficulty = 'easy';
+  let cols = 4, rows = 3, totalCards = 12;
+  let deck = [];
+  let firstCard = null;
+  let secondCard = null;
+  let lockBoard = false;
+  let moves = 0;
+  let matches = 0;
+
+  /* 12_3.a */
+  function setGridByDifficulty() {
+    difficulty = document.querySelector('input[name="difficulty"]:checked').value;
+    /* 12_3.a.i */
+    if (difficulty === 'easy') {
+      cols = 4; rows = 3; totalCards = 12;
+    }
+    /* 12_3.a.ii */
+    else {
+      cols = 6; rows = 4; totalCards = 24;
+    }
+    boardEl.style.gridTemplateColumns = `repeat(${cols}, 1fr)`;
+    boardEl.style.gap = '12px';
+  }
+
+  /* 12_2.b */
+  function buildDeck() {
+    const pairsNeeded = totalCards / 2;
+    if (pairsNeeded > ICONS.length) {
+      console.warn('Not enough unique icons provided — duplicating icons to fill.');
+    }
+    const chosen = ICONS.slice(0, pairsNeeded);
+    deck = [];
+    chosen.forEach((icon, idx) => {
+      deck.push({id: `${idx}-a`, icon});
+      deck.push({id: `${idx}-b`, icon});
+    });
+    shuffle(deck);
+  }
+
+  function shuffle(array) {
+    for (let i = array.length -1; i>0; i--) {
+      const j = Math.floor(Math.random()*(i+1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+  }
+
+  function renderBoard() {
+    boardEl.innerHTML = '';
+    deck.forEach(cardData => {
+      const card = document.createElement('div');
+      card.className = 'memory-card';
+      card.dataset.id = cardData.id;
+      card.dataset.icon = cardData.icon;
+
+      card.innerHTML = `
+        <div class="card-inner">
+          <div class="card-front">
+            <i class="bi ${cardData.icon}" aria-hidden="true" style="font-size: 1.8rem;"></i>
+          </div>
+          <div class="card-back">
+            <i class="bi bi-question-circle" aria-hidden="true" style="font-size: 1.6rem;"></i>
+          </div>
+        </div>
+      `;
+      card.addEventListener('click', onCardClick);
+      boardEl.appendChild(card);
+    });
+  }
+
+  /* 12_4.a */
+  function onCardClick(e) {
+    if (lockBoard) return;
+    const card = e.currentTarget;
+    if (card.classList.contains('matched') || card.classList.contains('flipped')) return;
+
+    flipCard(card);
+
+    if (!firstCard) {
+      firstCard = card;
+      return;
+    }
+
+    secondCard = card;
+    moves++;
+    updateStats();
+
+    /* 12_4.b */
+    if (firstCard === secondCard) {
+      secondCard = null;
+      return;
+    }
+
+    /* 12_5.a */
+    const isMatch = firstCard.dataset.icon === secondCard.dataset.icon;
+    if (isMatch) {
+      firstCard.classList.add('matched');
+      secondCard.classList.add('matched');
+      matches++;
+      resetOpenSelection();
+      updateStats();
+      checkForWin();
+    }
+    /* 12_5.b */
+    else {
+      lockBoard = true;
+      setTimeout(() => {
+        unflipCard(firstCard);
+        unflipCard(secondCard);
+        resetOpenSelection();
+        lockBoard = false;
+      }, 1000);
+    }
+  }
+
+  function flipCard(card) {
+    card.classList.add('flipped');
+  }
+  function unflipCard(card) {
+    card.classList.remove('flipped');
+  }
+
+  function resetOpenSelection() {
+    firstCard = null;
+    secondCard = null;
+  }
+
+  function updateStats() {
+    movesEl.textContent = moves;
+    matchesEl.textContent = matches;
+  }
+
+  function checkForWin() {
+    const totalPairs = totalCards / 2;
+    if (matches === totalPairs) {
+      winEl.style.display = 'block';
+    }
+  }
+
+  function startGame() {
+    setGridByDifficulty();
+    buildDeck();
+    shuffle(deck);
+    renderBoard();
+    moves = 0; matches = 0; lockBoard = false;
+    resetOpenSelection();
+    updateStats();
+    winEl.style.display = 'none';
+  }
+
+  /* 12_3.b */
+  /* 12_9 */
+  function resetGame() {
+    setGridByDifficulty();
+    buildDeck();
+    /* 12_3.b.i */
+    shuffle(deck);
+    renderBoard();
+    /* 12_3.b.ii */
+    moves = 0; matches = 0; lockBoard = false; resetOpenSelection();
+    /* 12_3.b.iii */
+    updateStats();
+    winEl.style.display = 'none';
+  }
+
+  /* 12_8 */
+  startBtn.addEventListener('click', startGame);
+  resetBtn.addEventListener('click', resetGame);
+  diffInputs.forEach(inp => inp.addEventListener('change', () => {
+    setGridByDifficulty();
+    boardEl.innerHTML = "";
+    moves = 0;
+    matches = 0;
+    updateStats();
+    winEl.style.display = 'none';
+  }));
+})();

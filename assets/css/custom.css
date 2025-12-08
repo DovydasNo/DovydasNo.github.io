@@ -299,94 +299,94 @@ a:focus {
 
 /* 9_pap.1 */
 .custom-counter {
-  counter-reset: item; 
-  padding-left: 0;
+    counter-reset: item; 
+    padding-left: 0;
 }
 
 .custom-counter > li {
-  list-style: none;
-  counter-increment: item;
-  position: relative;
-  padding-left: 45px;
-  margin: 12px 0;
+    list-style: none;
+    counter-increment: item;
+    position: relative;
+    padding-left: 45px;
+    margin: 12px 0;
 }
 
 .custom-counter li::before {
-  content: counter(item) ".";
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
+    content: counter(item) ".";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
 
-  width: 28px;
-  height: 28px;
-  line-height: 28px;
+    width: 28px;
+    height: 28px;
+    line-height: 28px;
 
-  font-weight: bold;
-  color: #0a74ff;
-  text-align: center;
-  background: #fff;
+    font-weight: bold;
+    color: #0a74ff;
+    text-align: center;
+    background: #fff;
 }
 
 .custom-counter li ul {
-  counter-reset: none !important;
-  counter-increment: none !important;
+    counter-reset: none !important;
+    counter-increment: none !important;
 }
 
 .nested-list {
-  list-style: square;
-  margin-top: 5px;
-  margin-left: 20px;
-  color: #444;
+    list-style: square;
+    margin-top: 5px;
+    margin-left: 20px;
+    color: #444;
 }
 
 .custom-bullets {
-  list-style: none;
-  padding-left: 0;
+    list-style: none;
+    padding-left: 0;
 }
 
 .custom-bullets li {
-  position: relative;
-  padding-left: 25px;
-  margin: 6px 0;
+    position: relative;
+    padding-left: 25px;
+    margin: 6px 0;
 }
 
 .custom-bullets li::before {
-  content: ">";
-  position: absolute;
-  left: 0;
-  color: #00b894;
-  font-weight: bold;
+    content: ">";
+    position: absolute;
+    left: 0;
+    color: #00b894;
+    font-weight: bold;
 }
 
 /* 9_pap.2 */
 .services-table {
-  width: 100%;
-  border-collapse: collapse;
-  text-align: center;
-  font-size: 16px;
-  background-color: white;
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+    font-size: 16px;
+    background-color: white;
 }
 
 .services-table th,
 .services-table td {
-  padding: 12px;
+    padding: 12px;
 }
 
 .services-table .header-row {
-  background: #f72b57;
-  color: white;
-  font-weight: bold;
-  text-transform: uppercase;
+    background: #f72b57;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
 }
 
 .services-table tr:nth-child(even) {
-  background: #f0f4ff;
+    background: #f0f4ff;
 }
 
 .services-table tr:hover {
-  background: #f5e0fc;
-  transition: 0.2s ease;
+    background: #f5e0fc;
+    transition: 0.2s ease;
 }
 
 /* 10_1 */
@@ -489,55 +489,55 @@ body.loaded #preloader {
 
 /* 10_pap.2 */
 .shape-circle {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  background: #ff4da6;
-  position: absolute;
-  top: 20px;
-  left: 20px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #ff4da6;
+    position: absolute;
+    top: 20px;
+    left: 20px;
 
-  animation: float 6s linear infinite;
+    animation: float 6s linear infinite;
 }
 
 @keyframes float {
-  0%,100% { transform: translateY(0); }
-  50% { transform: translateY(-25px); }
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-25px); }
 }
 
 .shape-square {
-  width: 50px;
-  height: 50px;
-  background: #4d88ff;
-  position: absolute;
-  top: 80px;
-  left: 200px;
+    width: 50px;
+    height: 50px;
+    background: #4d88ff;
+    position: absolute;
+    top: 80px;
+    left: 200px;
 
-  animation: scaleUp 3s ease-in-out infinite;
+    animation: scaleUp 3s ease-in-out infinite;
 }
 
 @keyframes scaleUp {
-  0%,100% { transform: scale(1); }
-  50% { transform: scale(1.4); }
+    0%,100% { transform: scale(1); }
+    50% { transform: scale(1.4); }
 }
 
 .shape-triangle {
-  width: 0;
-  height: 0;
-  border-left: 35px solid transparent;
-  border-right: 35px solid transparent;
-  border-bottom: 60px solid #00cc99;
+    width: 0;
+    height: 0;
+    border-left: 35px solid transparent;
+    border-right: 35px solid transparent;
+    border-bottom: 60px solid #00cc99;
 
-  position: absolute;
-  top: 0;
-  left: 350px;
+    position: absolute;
+    top: 0;
+    left: 350px;
 
-  animation: spin 4s ease-in-out infinite;
+    animation: spin 4s ease-in-out infinite;
 }
 
 @keyframes spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
 }
 
 /* 11_3 */
@@ -622,4 +622,86 @@ body.loaded #preloader {
     color: #dc3545;
     font-size: 0.85em;
     margin-top: 4px;
+}
+
+/* 12_10 */
+.game-board {
+    display: grid;
+    gap: 12px;
+    width: 100%;
+}
+
+.memory-card {
+    perspective: 1000px;
+    width: 100%;
+    aspect-ratio: 3/4;
+    cursor: pointer;
+    position: relative;
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transform: rotateY(0deg);
+    transition: transform 0.5s;
+    border-radius: 8px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+}
+
+.memory-card.flipped .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+    position: absolute;
+    inset: 0;
+    backface-visibility: hidden;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:8px;
+    font-size: 2.4rem;
+}
+
+.card-front {
+    background: #ffffff;
+    transform: rotateY(180deg);
+    border: 2px solid rgba(0,0,0,0.06);
+}
+
+.card-back {
+    background: linear-gradient(135deg, #0d6efd10, #6f42c110);
+    transform: rotateY(0deg);
+    border: 2px dashed rgba(0,0,0,0.06);
+    color: #0d6efd;
+}
+
+.memory-card.matched .card-inner {
+    box-shadow: 0 0 0 3px rgba(16,185,129,0.12) inset;
+    cursor: default;
+    opacity: 0.95;
+    transform: rotateY(180deg) !important;
+}
+
+.memory-card.matched .card-front {
+    transform: rotateY(0deg) !important;
+}
+
+.memory-card.matched .card-back {
+    transform: rotateY(180deg) !important;
+}
+
+.stats-card {
+    min-height: 160px;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.04);
+}
+
+@media (max-width: 991px) {
+    .game-board {
+        margin-bottom: 1rem;
+    }
 }

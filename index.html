@@ -597,6 +597,61 @@
       </div>
     </section><!-- /Contact Section -->
 
+      <!-- 12_1 -->
+    <section id="memory-game" class="section light-background" data-aos="fade-up">
+      <div class="container section-title">
+        <h2>Mano Žaidimas</h2>
+      </div>
+
+      <div class="container" style="margin-top: 1rem;">
+        <!-- 12_1.a -->
+        <div class="d-flex flex-wrap align-items-center justify-content-between mb-3 game-controls">
+          <div class="d-flex align-items-center gap-3">
+            <label class="me-2">Sunkumas:</label>
+            <div class="btn-group" role="group" aria-label="Difficulty">
+              <input type="radio" class="btn-check" name="difficulty" id="diff-easy" autocomplete="off" value="easy" checked>
+              <label class="btn btn-outline-primary" for="diff-easy">Lengvas (4x3)</label>
+
+              <input type="radio" class="btn-check" name="difficulty" id="diff-hard" autocomplete="off" value="hard">
+              <label class="btn btn-outline-primary" for="diff-hard">Sunkus (6x4)</label>
+            </div>
+          </div>
+
+            <!-- 12_1.d -->
+          <div class="d-flex gap-2">
+              <!-- 12_8 -->
+            <button id="startGameBtn" class="btn btn-success">Start</button>
+              <!-- 12_9 -->
+            <button id="resetGameBtn" class="btn btn-secondary">Atnaujinti</button>
+          </div>
+        </div>
+
+        <div class="row">
+            <!-- 12_1.b -->
+          <div class="col-lg-8">
+            <div id="gameBoard" class="game-board"></div>
+          </div>
+
+            <!-- 12_1.c -->
+          <div class="col-lg-4">
+            <div class="card stats-card p-3">
+              <h5>Statistika</h5>
+                <!-- 12_6.a -->
+              <p>Ėjimai: <span id="movesCount">0</span></p>
+                <!-- 12_6.b -->
+              <p>Porų skaičius: <span id="matchesCount">0</span></p>
+                <!-- 12_1.e -->
+                <!-- 12_7 -->
+              <div id="winMessage" class="alert alert-success mt-3" style="display:none;">
+                <strong>Laimėjote!</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+      <!-- /Game Section -->
+
   </main>
 
   <footer id="footer" class="footer">
